@@ -50,4 +50,14 @@ public class FactorialServerHandler extends SimpleChannelInboundHandler<BigInteg
         cause.printStackTrace();
         ctx.close();
     }
+
+    @Override
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+        super.handlerAdded(ctx);
+    }
+
+    @Override
+    public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
+        super.handlerRemoved(ctx);
+    }
 }

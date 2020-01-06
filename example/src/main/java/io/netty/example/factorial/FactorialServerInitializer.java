@@ -15,6 +15,7 @@
  */
 package io.netty.example.factorial;
 
+import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -53,5 +54,15 @@ public class FactorialServerInitializer extends ChannelInitializer<SocketChannel
         // Please note we create a handler for every new channel
         // because it has stateful properties.
         pipeline.addLast(new FactorialServerHandler());
+    }
+
+    @Override
+    public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
+        super.handlerAdded(ctx);
+    }
+
+    @Override
+    public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
+        super.handlerRemoved(ctx);
     }
 }
